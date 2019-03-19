@@ -37,10 +37,7 @@ Cart.propTypes = {
   ).isRequired,
 };
 
-function mapStateToProps(state) {
-  return {
-    products: state.shop.products.filter(product => product.cartCount > 0),
-  };
-}
-
-export default connect(mapStateToProps)(Cart);
+const enhance = connect(state => ({
+  products: state.shop.products.filter(product => product.cartCount > 0),
+}));
+export default enhance(Cart);
