@@ -9,6 +9,7 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
+import PropTypes from "prop-types";
 import { Shop, Favorites, Cart, PageNotFound, Login } from "./pages";
 import { PageLayout, PrivateRoute } from "./components";
 import auth from "../auth";
@@ -91,6 +92,18 @@ class App extends React.Component {
     );
   }
 }
+
+// app.propTypes = {
+//logout: PropTypes.func.isRequired,
+
+//   products: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.string.isRequired,
+//     })
+//   ).isRequired,
+//   toggleFavorite: PropTypes.func.isRequired,
+//   updateCartCount: PropTypes.func.isRequired,
+// };
 
 const enhance = connect(
   state => ({
